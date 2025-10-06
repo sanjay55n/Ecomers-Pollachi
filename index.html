@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ecomers Pollachi - Payment Methods</title>
+    <title>Ecomers Pollachi - Fresh Agricultural Products</title>
+    <link rel="icon" href="icons8-agricultural-64.png" type="image/x-icon">
+
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -28,715 +30,887 @@
         background-color: #f5f5f5;
       }
 
-      .payment-container {
-        max-width: 1000px;
-        margin: 30px auto;
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
+      .navbar-brand {
+        font-weight: 700;
+        color: var(--primary-color) !important;
       }
 
-      .payment-header {
-        background: var(--primary-color);
+      .nav-link {
+        font-weight: 500;
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
+      }
+
+      .btn-outline-primary {
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+
+      .btn-outline-primary:hover {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
         color: white;
-        padding: 20px;
+      }
+
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("image1.jpeg");
+        background-size: cover;
+        background-position: center;
+        color: rgb(218, 221, 37);
+        padding: 65px 0;
+      }
+
+      .section-title {
+        position: relative;
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background-color: var(--accent-color);
+      }
+
+      .card {
+        transition: transform 0.3s;
+        border: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        height: 100%;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      .product-card .card-img-top {
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .category-card {
         text-align: center;
-      }
-
-      .payment-body {
-        padding: 30px;
-      }
-
-      .payment-method {
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 15px;
-        margin-bottom: 15px;
-        cursor: pointer;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: var(--light-color);
         transition: all 0.3s;
+        height: 100%;
       }
 
-      .payment-method:hover {
-        border-color: var(--primary-color);
-        background-color: #f9f9f9;
+      .category-card:hover {
+        background-color: var(--primary-color);
+        color: white;
       }
 
-      .payment-method.selected {
-        border-color: var(--primary-color);
-        background-color: rgba(44, 85, 48, 0.05);
+      .category-card:hover i {
+        color: white;
       }
 
-      .payment-icon {
-        font-size: 24px;
-        margin-right: 15px;
+      .category-card i {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
         color: var(--primary-color);
       }
 
-      .payment-details {
-        display: none;
-        margin-top: 20px;
+      .footer {
+        background-color: var(--dark-color);
+        color: white;
+        padding: 50px 0 20px;
+      }
+
+      .footer a {
+        color: #ddd;
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        color: white;
+      }
+
+      .newsletter {
+        background-color: var(--light-color);
+        padding: 50px 0;
+      }
+
+      .badge-sale {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: var(--accent-color);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 3px;
+        font-weight: 600;
+      }
+
+      .price {
+        color: var(--primary-color);
+        font-weight: 700;
+        font-size: 1.2rem;
+      }
+
+      .old-price {
+        text-decoration: line-through;
+        color: #6c757d;
+        font-size: 0.9rem;
+      }
+
+      .payment-icon {
+        color: var(--primary-color);
+        transition: color 0.3s;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        display: inline-block;
+      }
+
+      .payment-icon:hover {
+        color: var(--accent-color);
+      }
+
+      .farmer-section {
+        background-color: #e9f5e9;
+        padding: 60px 0;
+      }
+
+      .testimonial-card {
+        background-color: white;
+        border-radius: 10px;
         padding: 20px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        background-color: #f9f9f9;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       }
 
-      .payment-details.active {
-        display: block;
+      .testimonial-img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 15px;
       }
 
-      .form-group {
+      .product-detail {
+        background-color: white;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .quantity-selector {
+        width: 100px;
+      }
+
+      .cart-item {
+        border-bottom: 1px solid #eee;
+        padding: 15px 0;
+      }
+
+      .checkout-summary {
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        padding: 20px;
+      }
+
+      .about-section {
+        padding: 80px 0;
+      }
+
+      .stats-card {
+        text-align: center;
+        padding: 30px 20px;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .stats-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .stats-card i {
+        font-size: 2.5rem;
+        color: var(--primary-color);
         margin-bottom: 15px;
       }
 
-      .upi-apps {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 10px;
-      }
-
-      .upi-app {
-        flex: 1;
-        min-width: 100px;
-        text-align: center;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: all 0.3s;
-      }
-
-      .upi-app:hover {
-        border-color: var(--primary-color);
-      }
-
-      .upi-app.selected {
-        border-color: var(--primary-color);
-        background-color: rgba(44, 85, 48, 0.05);
-      }
-
-      .card-logos {
-        display: flex;
-        gap: 10px;
-        margin-top: 10px;
-      }
-
-      .card-logo {
-        height: 30px;
-      }
-
-      .wallet-options {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 10px;
-      }
-
-      .wallet-option {
-        flex: 1;
-        min-width: 100px;
-        text-align: center;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: all 0.3s;
-      }
-
-      .wallet-option:hover {
-        border-color: var(--primary-color);
-      }
-
-      .wallet-option.selected {
-        border-color: var(--primary-color);
-        background-color: rgba(44, 85, 48, 0.05);
-      }
-
-      .net-banking-banks {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 10px;
-        margin-top: 10px;
-        max-height: 200px;
-        overflow-y: auto;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-      }
-
-      .bank-option {
-        padding: 10px;
-        border: 1px solid #eee;
-        border-radius: 5px;
-        cursor: pointer;
-        text-align: center;
-        transition: all 0.3s;
-      }
-
-      .bank-option:hover {
-        border-color: var(--primary-color);
-      }
-
-      .bank-option.selected {
-        border-color: var(--primary-color);
-        background-color: rgba(44, 85, 48, 0.05);
-      }
-
-      .qr-code {
-        text-align: center;
-        margin: 20px 0;
-      }
-
-      .qr-code img {
-        max-width: 200px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 10px;
-        background: white;
-      }
-
-      .btn-pay {
-        background-color: var(--primary-color);
-        color: white;
-        padding: 12px 30px;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        font-weight: 600;
-        width: 100%;
-        margin-top: 20px;
-        transition: all 0.3s;
-      }
-
-      .btn-pay:hover {
-        background-color: var(--secondary-color);
-      }
-
-      .order-summary {
-        background-color: #f9f9f9;
-        padding: 20px;
-        border-radius: 8px;
-        margin-bottom: 20px;
-      }
-
-      .security-badge {
-        text-align: center;
-        margin-top: 20px;
-        color: #666;
-        font-size: 14px;
-      }
-
-      .security-badge i {
-        color: green;
-        margin-right: 5px;
+      .stats-card h3 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 10px;
       }
     </style>
   </head>
   <body>
-    <div class="payment-container">
-      <div class="payment-header">
-        <h2><i class="fas fa-lock me-2"></i>Secure Payment</h2>
-        <p class="mb-0">Complete your purchase securely</p>
+    <!-- Navigation -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <i class="fas fa-tractor me-2"></i>Ecomers Pollachi
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#products">Products</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                Categories
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="fas fa-apple-alt me-2"></i>Fruits</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="fas fa-carrot me-2"></i>Vegetables</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="fas fa-seedling me-2"></i>Grains & Pulses</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="fas fa-wine-bottle me-2"></i>Oils & Extracts</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="fas fa-mortar-pestle me-2"></i>Spices</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#farmers">Our Farmers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About Us</a>
+            </li>
+          </ul>
+          <div class="d-flex">
+            <a href="#" class="btn btn-outline-primary me-2">
+              <i class="fas fa-search"></i>
+            </a>
+            <a href="#" class="btn btn-outline-primary me-2">
+              <i class="fas fa-user"></i>
+            </a>
+            <a href="#" class="btn btn-outline-primary position-relative">
+              <i class="fas fa-shopping-cart"></i>
+              <span
+                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+              >
+                3
+              </span>
+            </a>
+          </div>
+        </div>
       </div>
+    </nav>
 
-      <div class="payment-body">
-        <div class="row">
-          <div class="col-md-8">
-            <div class="order-summary">
-              <h4>Order Summary</h4>
-              <div class="d-flex justify-content-between">
-                <span>Cold Pressed Coconut Oil (1L)</span>
-                <span>₹450</span>
-              </div>
-              <div class="d-flex justify-content-between">
-                <span>Pollachi Bananas (2kg)</span>
-                <span>₹160</span>
-              </div>
-              <div class="d-flex justify-content-between">
-                <span>Organic Turmeric (500g)</span>
-                <span>₹110</span>
-              </div>
-              <hr />
-              <div class="d-flex justify-content-between">
-                <strong>Total Amount</strong>
-                <strong>₹720</strong>
-              </div>
-            </div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h1 class="display-4 fw-bold mb-4">
+              Fresh Agricultural Products from Pollachi
+            </h1>
+            <p class="lead mb-4">
+              Direct from Pollachi farms to your home. Fresh, organic, and
+              authentic produce with secure Indian payment options.
+            </p>
+            <a href="#products" class="btn btn-primary btn-lg me-2">Shop Now</a>
+            <a href="#farmers" class="btn btn-outline-light btn-lg"
+              >Meet Our Farmers</a
+            >
+          </div>
+          <div class="col-lg-6 text-center">
+            <img
+              src="pollachi Coconut imagel.jpeg"
+              alt="Pollachi Products"
+              class="img-fluid rounded shadow"
+              height="1000px"
+              width="1000px"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <h4 class="mb-3">Select Payment Method</h4>
-
-            <!-- UPI Payment Method -->
-            <div class="payment-method" data-method="upi">
-              <div class="d-flex align-items-center">
-                <div class="payment-icon">
-                  <i class="fas fa-mobile-alt"></i>
-                </div>
-                <div>
-                  <h5 class="mb-1">UPI Payment</h5>
-                  <p class="mb-0">Pay using UPI ID or QR Code</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card Payment Method -->
-            <div class="payment-method" data-method="card">
-              <div class="d-flex align-items-center">
-                <div class="payment-icon">
-                  <i class="far fa-credit-card"></i>
-                </div>
-                <div>
-                  <h5 class="mb-1">Credit/Debit Card</h5>
-                  <p class="mb-0">Pay using your card</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Net Banking Method -->
-            <div class="payment-method" data-method="netbanking">
-              <div class="d-flex align-items-center">
-                <div class="payment-icon">
-                  <i class="fas fa-university"></i>
-                </div>
-                <div>
-                  <h5 class="mb-1">Net Banking</h5>
-                  <p class="mb-0">Pay using your bank account</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Wallet Method -->
-            <div class="payment-method" data-method="wallet">
-              <div class="d-flex align-items-center">
-                <div class="payment-icon">
-                  <i class="fas fa-wallet"></i>
-                </div>
-                <div>
-                  <h5 class="mb-1">Wallet</h5>
-                  <p class="mb-0">Pay using digital wallet</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Cash on Delivery -->
-            <div class="payment-method" data-method="cod">
-              <div class="d-flex align-items-center">
-                <div class="payment-icon">
-                  <i class="fas fa-money-bill-wave"></i>
-                </div>
-                <div>
-                  <h5 class="mb-1">Cash on Delivery</h5>
-                  <p class="mb-0">Pay when you receive your order</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- UPI Payment Details -->
-            <div class="payment-details" id="upi-details">
-              <h5>UPI Payment</h5>
-              <div class="form-group">
-                <label for="upi-id">Enter UPI ID</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="upi-id"
-                  placeholder="yourname@upi"
-                />
-              </div>
-              <p class="text-center">- OR -</p>
-              <div class="qr-code">
-                <p>Scan QR Code to pay</p>
-                <img
-                  src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=UPIID:ecomerspollachi@icici&amount=720"
-                  alt="QR Code"
-                />
-                <p class="mt-2">Amount: ₹720</p>
-              </div>
-              <div class="upi-apps">
-                <div class="upi-app" data-app="gpay">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Google_Pay_%28GPay%29_Logo.svg/512px-Google_Pay_%28GPay%29_Logo.svg.png"
-                    alt="Google Pay"
-                    height="30"
-                  />
-                  <div>Google Pay</div>
-                </div>
-                <div class="upi-app" data-app="phonepe">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/PhonePe_Logo.svg/2560px-PhonePe_Logo.svg.png"
-                    alt="PhonePe"
-                    height="30"
-                  />
-                  <div>PhonePe</div>
-                </div>
-                <div class="upi-app" data-app="paytm">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Paytm_Logo.svg/2560px-Paytm_Logo.svg.png"
-                    alt="Paytm"
-                    height="30"
-                  />
-                  <div>Paytm</div>
-                </div>
-                <div class="upi-app" data-app="bhim">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/BHIM_App_logo.svg/1200px-BHIM_App_logo.svg.png"
-                    alt="BHIM"
-                    height="30"
-                  />
-                  <div>BHIM</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card Payment Details -->
-            <div class="payment-details" id="card-details">
-              <h5>Card Payment</h5>
-              <div class="form-group">
-                <label for="card-number">Card Number</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="card-number"
-                  placeholder="1234 5678 9012 3456"
-                />
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="expiry-date">Expiry Date</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="expiry-date"
-                      placeholder="MM/YY"
-                    />
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="cvv">CVV</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="cvv"
-                      placeholder="123"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="cardholder-name">Cardholder Name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="cardholder-name"
-                  placeholder="John Doe"
-                />
-              </div>
-              <div class="card-logos">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/800px-Visa_Inc._logo.svg.png"
-                  alt="Visa"
-                  class="card-logo"
-                />
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png"
-                  alt="Mastercard"
-                  class="card-logo"
-                />
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/RuPay.svg/1200px-RuPay.svg.png"
-                  alt="RuPay"
-                  class="card-logo"
-                />
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png"
-                  alt="Amex"
-                  class="card-logo"
-                />
-              </div>
-            </div>
-
-            <!-- Net Banking Details -->
-            <div class="payment-details" id="netbanking-details">
-              <h5>Net Banking</h5>
-              <p>Select your bank</p>
-              <div class="net-banking-banks">
-                <div class="bank-option" data-bank="sbi">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/SBI-logo.svg/1200px-SBI-logo.svg.png"
-                    alt="SBI"
-                    height="30"
-                  />
-                  <div>State Bank of India</div>
-                </div>
-                <div class="bank-option" data-bank="hdfc">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/HDFC_Bank_Logo.svg/1200px-HDFC_Bank_Logo.svg.png"
-                    alt="HDFC"
-                    height="30"
-                  />
-                  <div>HDFC Bank</div>
-                </div>
-                <div class="bank-option" data-bank="icici">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Icici_bank_logo.svg/1200px-Icici_bank_logo.svg.png"
-                    alt="ICICI"
-                    height="30"
-                  />
-                  <div>ICICI Bank</div>
-                </div>
-                <div class="bank-option" data-bank="axis">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Axis_Bank_logo.svg/1200px-Axis_Bank_logo.svg.png"
-                    alt="Axis"
-                    height="30"
-                  />
-                  <div>Axis Bank</div>
-                </div>
-                <div class="bank-option" data-bank="pnb">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Punjab_National_Bank_logo.svg/1200px-Punjab_National_Bank_logo.svg.png"
-                    alt="PNB"
-                    height="30"
-                  />
-                  <div>Punjab National Bank</div>
-                </div>
-                <div class="bank-option" data-bank="bob">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Bank_of_Baroda_Logo.svg/1200px-Bank_of_Baroda_Logo.svg.png"
-                    alt="BOB"
-                    height="30"
-                  />
-                  <div>Bank of Baroda</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Wallet Details -->
-            <div class="payment-details" id="wallet-details">
-              <h5>Digital Wallet</h5>
-              <p>Select your wallet</p>
-              <div class="wallet-options">
-                <div class="wallet-option" data-wallet="paytm">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Paytm_Logo.svg/2560px-Paytm_Logo.svg.png"
-                    alt="Paytm"
-                    height="30"
-                  />
-                  <div>Paytm</div>
-                </div>
-                <div class="wallet-option" data-wallet="phonepe">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/PhonePe_Logo.svg/2560px-PhonePe_Logo.svg.png"
-                    alt="PhonePe"
-                    height="30"
-                  />
-                  <div>PhonePe</div>
-                </div>
-                <div class="wallet-option" data-wallet="amazonpay">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Amazon_Pay_logo.svg/1200px-Amazon_Pay_logo.svg.png"
-                    alt="Amazon Pay"
-                    height="30"
-                  />
-                  <div>Amazon Pay</div>
-                </div>
-                <div class="wallet-option" data-wallet="mobikwik">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Mobikwik_logo.svg/1200px-Mobikwik_logo.svg.png"
-                    alt="MobiKwik"
-                    height="30"
-                  />
-                  <div>MobiKwik</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- COD Details -->
-            <div class="payment-details" id="cod-details">
-              <h5>Cash on Delivery</h5>
-              <div class="alert alert-info">
-                <i class="fas fa-info-circle me-2"></i>
-                You will pay ₹720 in cash when you receive your order.
-              </div>
-              <p>Please keep exact change ready for the delivery executive.</p>
-              <p>Delivery charges: ₹40 (included in total)</p>
-            </div>
-
-            <button class="btn btn-pay" id="pay-button">
-              <i class="fas fa-lock me-2"></i>Pay Now ₹720
-            </button>
-
-            <div class="security-badge">
-              <i class="fas fa-shield-alt"></i> Your payment is secured with
-              256-bit SSL encryption
+    <!-- Categories Section -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="section-title">Shop by Category</h2>
+        <div class="row g-4">
+          <div class="col-md-2 col-sm-4 col-6">
+            <div class="category-card">
+              <i class="fas fa-apple-alt"></i>
+              <h6>Fruits</h6>
             </div>
           </div>
+          <div class="col-md-2 col-sm-4 col-6">
+            <div class="category-card">
+              <i class="fas fa-carrot"></i>
+              <h6>Vegetables</h6>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-6">
+            <div class="category-card">
+              <i class="fas fa-seedling"></i>
+              <h6>Grains</h6>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-6">
+            <div class="category-card">
+              <i class="fas fa-wine-bottle"></i>
+              <h6>Oils</h6>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-6">
+            <div class="category-card">
+              <i class="fas fa-mortar-pestle"></i>
+              <h6>Spices</h6>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-6">
+            <div class="category-card">
+              <i class="fas fa-wine-bottle"></i>
+              <h6>Beverages</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Featured Products -->
+    <section id="products" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="row g-4">
+          <!-- Product 1 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="card product-card h-100">
+              <div class="position-relative">
+                <img
+                  src="Cold pressed coconut oil.jpeg"
+                  class="card-img-top"
+                  alt="Coconut Oil"
+                />
+                <span class="badge-sale">Best Seller</span>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Cold Pressed Coconut Oil</h5>
+                <p class="card-text">
+                  Pure, natural coconut oil extracted using traditional methods
+                  from Pollachi coconuts.
+                </p>
+                <div class="mt-auto">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <span class="price">₹450</span>
+                      <span class="old-price ms-2">₹550</span>
+                    </div>
+                    <a href="#" class="btn btn-primary btn-sm">
+                      <i class="fas fa-cart-plus"></i> Add
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Product 2 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="card product-card h-100">
+              <img
+                src="Pollachi Bananas.avif"
+                class="card-img-top"
+                alt="Banana"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Pollachi Bananas</h5>
+                <p class="card-text">
+                  Fresh, naturally grown bananas from Pollachi farms. Rich in
+                  nutrients and flavor.
+                </p>
+                <div class="mt-auto">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <span class="price">₹80/kg</span>
+                    <a href="#" class="btn btn-primary btn-sm">
+                      <i class="fas fa-cart-plus"></i> Add
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Product 3 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="card product-card h-100">
+              <img src="Organic Turmeric.jpeg" class="card-img-top" alt="Turmeric" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Organic Turmeric</h5>
+                <p class="card-text">
+                  Pure organic turmeric powder with high curcumin content from
+                  local farms.
+                </p>
+                <div class="mt-auto">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <span class="price">₹220/kg</span>
+                    <a href="#" class="btn btn-primary btn-sm">
+                      <i class="fas fa-cart-plus"></i> Add
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Product 4 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="card product-card h-100">
+              <div class="position-relative">
+                <img
+                  src="Pure Forest Honey.jpeg"
+                  class="card-img-top"
+                  alt="Honey"
+                />
+                <span class="badge-sale">New</span>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Pure Forest Honey</h5>
+                <p class="card-text">
+                  100% natural honey collected from Pollachi forests by local
+                  tribes.
+                </p>
+                <div class="mt-auto">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <span class="price">₹350</span>
+                    <a href="#" class="btn btn-primary btn-sm">
+                      <i class="fas fa-cart-plus"></i> Add
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="#" class="btn btn-outline-primary">View All Products</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Farmers Section -->
+    <section id="farmers" class="farmer-section py-5">
+      <div class="container">
+        <h2 class="section-title">Meet Our Farmers</h2>
+        <div class="row g-4">
           <div class="col-md-4">
-            <div class="order-summary">
-              <h4>Order Details</h4>
-              <div class="d-flex justify-content-between mb-2">
-                <span>Products</span>
-                <span>₹720</span>
+            <div class="testimonial-card">
+              <div class="d-flex align-items-center mb-3">
+                <img
+                  src="Rajendran.jpeg"
+                  alt="Farmer"
+                  class="testimonial-img"
+                />
+                <div>
+                  <h5 class="mb-0">Rajendran</h5>
+                  <p class="text-muted mb-0">Coconut Farmer, 15 years</p>
+                </div>
               </div>
-              <div class="d-flex justify-content-between mb-2">
-                <span>Delivery</span>
-                <span>₹40</span>
-              </div>
-              <div class="d-flex justify-content-between mb-2">
-                <span>Taxes</span>
-                <span>₹0</span>
-              </div>
-              <hr />
-              <div class="d-flex justify-content-between">
-                <strong>Total</strong>
-                <strong>₹720</strong>
-              </div>
-            </div>
-
-            <div class="order-summary">
-              <h4>Delivery Address</h4>
               <p>
-                <strong>John Doe</strong><br />
-                123 Main Street<br />
-                Pollachi, Tamil Nadu 642001<br />
-                Phone: +91 98765 43210
+                "Ecomers Pollachi has helped me reach customers directly. Now I
+                get fair prices for my coconuts without middlemen."
               </p>
-              <a href="#" class="btn btn-outline-primary btn-sm"
-                >Change Address</a
-              >
             </div>
-
-            <div class="order-summary">
-              <h4>Need Help?</h4>
+          </div>
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <div class="d-flex align-items-center mb-3">
+                <img
+                  src="Lakshmi.jpeg"
+                  alt="Farmer"
+                  class="testimonial-img"
+                />
+                <div>
+                  <h5 class="mb-0">Lakshmi</h5>
+                  <p class="text-muted mb-0">Banana Grower, 8 years</p>
+                </div>
+              </div>
               <p>
-                <i class="fas fa-phone me-2"></i> +91 98765 43210<br />
-                <i class="fas fa-envelope me-2"></i> support@ecomerspollachi.com
+                "Through Ecomers Pollachi, I can sell my bananas across Tamil
+                Nadu. The platform is easy to use and payments come quickly."
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <div class="d-flex align-items-center mb-3">
+                <img
+                  src="Murugan.webp"
+                  alt="Farmer"
+                  class="testimonial-img"
+                />
+                <div>
+                  <h5 class="mb-0">Murugan</h5>
+                  <p class="text-muted mb-0">Spice Farmer, 20 years</p>
+                </div>
+              </div>
+              <p>
+                "My organic turmeric and other spices now reach customers who
+                appreciate quality. Ecomers Pollachi changed my business."
               </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <h2 class="section-title">About Ecomers Pollachi</h2>
+        <div class="row align-items-center mb-5">
+          <div class="col-lg-6">
+            <img
+              src="Connecting Farmers Directly to Consumers.jpeg"
+              alt="About Ecomers Pollachi"
+              class="img-fluid rounded shadow"
+              height="600px"
+              width="600px"
+            />
+          </div>
+          <div class="col-lg-6">
+            <h3 class="mb-4">Connecting Farmers Directly to Consumers</h3>
+            <p class="mb-4">
+              Ecomers Pollachi was founded in 2020 with a simple mission: to
+              bring the freshest agricultural products directly from Pollachi
+              farms to your doorstep while ensuring fair prices for our local
+              farmers.
+            </p>
+
+            <div class="row mb-4">
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="fas fa-check-circle text-success me-2"></i>
+                  <span>100% Fresh Products</span>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                  <i class="fas fa-check-circle text-success me-2"></i>
+                  <span>Direct from Farmers</span>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="fas fa-check-circle text-success me-2"></i>
+                  <span>Fair Trade Practices</span>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                  <i class="fas fa-check-circle text-success me-2"></i>
+                  <span>Secure Payments</span>
+                </div>
+              </div>
+            </div>
+
+            <h5>Our Values</h5>
+            <p>
+              We believe in sustainable farming, supporting local agriculture,
+              and providing our customers with the authentic taste of Pollachi's
+              rich agricultural heritage.
+            </p>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-md-3 mb-4">
+            <div class="stats-card">
+              <i class="fas fa-tractor"></i>
+              <h3>500+</h3>
+              <p>Farmers Partnered</p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="stats-card">
+              <i class="fas fa-shopping-bag"></i>
+              <h3>10,000+</h3>
+              <p>Happy Customers</p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="stats-card">
+              <i class="fas fa-map-marker-alt"></i>
+              <h3>50+</h3>
+              <p>Cities Served</p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="stats-card">
+              <i class="fas fa-leaf"></i>
+              <h3>100%</h3>
+              <p>Organic Products</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Payment Methods -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="section-title">Secure Payment Methods</h2>
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="lead">
+              We accept all major Indian payment methods for your convenience
+              and security.
+            </p>
+            <div class="payment-methods mt-4">
+              <!-- Using Font Awesome for payment icons -->
+              <span class="payment-icon">
+                <i class="fab fa-google-pay fa-3x" title="Google Pay"></i>
+              </span>
+              <span class="payment-icon">
+                <i class="fas fa-mobile-alt fa-3x" title="UPI"></i>
+              </span>
+              <span class="payment-icon">
+                <i class="fab fa-cc-visa fa-3x" title="Visa"></i>
+              </span>
+              <span class="payment-icon">
+                <i class="fab fa-cc-mastercard fa-3x" title="Mastercard"></i>
+              </span>
+              <span class="payment-icon">
+                <i class="fas fa-qrcode fa-3x" title="Bharat QR"></i>
+              </span>
+              <span class="payment-icon">
+                <i class="fas fa-wallet fa-3x" title="Wallets"></i>
+              </span>
+              <span class="payment-icon">
+                <i class="fab fa-cc-paypal fa-3x" title="PayPal"></i>
+              </span>
+              <span class="payment-icon">
+                <i class="fas fa-university fa-3x" title="Net Banking"></i>
+              </span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="checkout-summary">
+              <h4 class="mb-4">Secure Checkout Process</h4>
+              <div class="d-flex align-items-center mb-3">
+                <div
+                  class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3"
+                  style="width: 30px; height: 30px"
+                >
+                  1
+                </div>
+                <div>
+                  <h6 class="mb-0">Add Products to Cart</h6>
+                  <small class="text-muted"
+                    >Select your favorite Pollachi products</small
+                  >
+                </div>
+              </div>
+              <div class="d-flex align-items-center mb-3">
+                <div
+                  class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3"
+                  style="width: 30px; height: 30px"
+                >
+                  2
+                </div>
+                <div>
+                  <h6 class="mb-0">Choose Payment Method</h6>
+                  <small class="text-muted"
+                    >UPI, Card, Net Banking, or Wallet</small
+                  >
+                </div>
+              </div>
+              <div class="d-flex align-items-center mb-3">
+                <div
+                  class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3"
+                  style="width: 30px; height: 30px"
+                >
+                  3
+                </div>
+                <div>
+                  <h6 class="mb-0">Secure Payment</h6>
+                  <small class="text-muted">256-bit SSL encryption</small>
+                </div>
+              </div>
+              <div class="d-flex align-items-center">
+                <div
+                  class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3"
+                  style="width: 30px; height: 30px"
+                >
+                  4
+                </div>
+                <div>
+                  <h6 class="mb-0">Fast Delivery</h6>
+                  <small class="text-muted"
+                    >Fresh products to your doorstep</small
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center">
+            <h3>Subscribe to Our Newsletter</h3>
+            <p class="mb-4">
+              Get updates on seasonal products, special offers, and farming
+              events in Pollachi.
+            </p>
+            <form class="d-flex">
+              <input
+                type="email"
+                class="form-control me-2"
+                placeholder="Your email address"
+              />
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h5 class="mb-4">
+              <i class="fas fa-tractor me-2"></i>Ecomers Pollachi
+            </h5>
+            <p>
+              Your trusted platform for fresh agricultural products directly
+              from Pollachi farmers. Supporting local agriculture with fair
+              trade practices.
+            </p>
+            <div class="social-links mt-4">
+              <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h5 class="mb-4">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="#">Home</a></li>
+              <li class="mb-2"><a href="#products">Products</a></li>
+              <li class="mb-2"><a href="#farmers">Our Farmers</a></li>
+              <li class="mb-2"><a href="#about">About Us</a></li>
+              <li class="mb-2"><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5 class="mb-4">Customer Service</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="#">FAQ</a></li>
+              <li class="mb-2"><a href="#">Shipping Policy</a></li>
+              <li class="mb-2"><a href="#">Returns & Refunds</a></li>
+              <li class="mb-2"><a href="#">Terms of Service</a></li>
+              <li class="mb-2"><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5 class="mb-4">Contact Us</h5>
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <i class="fas fa-map-marker-alt me-2"></i>
+                123 Farm Road, Pollachi, Tamil Nadu 642001
+              </li>
+              <li class="mb-3">
+                <i class="fas fa-phone me-2"></i>
+                +91 98765 43210
+              </li>
+              <li class="mb-3">
+                <i class="fas fa-envelope me-2"></i>
+                info@ecomerspollachi.com
+              </li>
+              <li class="mb-3">
+                <i class="fas fa-clock me-2"></i>
+                Mon-Sat: 9AM - 7PM
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="my-4" />
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="mb-0">
+              &copy; 2025 Ecomers Pollachi. All rights reserved.
+            </p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div class="payment-methods">
+              <span class="payment-icon">
+                <i class="fab fa-google-pay fa-2x" title="Google Pay"></i>
+              </span>
+              <span class="payment-icon">
+                <i class="fab fa-cc-visa fa-2x" title="Visa"></i>
+              </span>
+              <span class="payment-icon">
+                <i class="fab fa-cc-mastercard fa-2x" title="Mastercard"></i>
+              </span>
+              <span class="payment-icon">
+                <i class="fas fa-mobile-alt fa-2x" title="UPI"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const paymentMethods = document.querySelectorAll(".payment-method");
-        const paymentDetails = document.querySelectorAll(".payment-details");
-        const upiApps = document.querySelectorAll(".upi-app");
-        const walletOptions = document.querySelectorAll(".wallet-option");
-        const bankOptions = document.querySelectorAll(".bank-option");
-        const payButton = document.getElementById("pay-button");
-
-        // Initialize with UPI selected
-        selectPaymentMethod("upi");
-
-        // Payment method selection
-        paymentMethods.forEach((method) => {
-          method.addEventListener("click", function () {
-            const methodType = this.getAttribute("data-method");
-            selectPaymentMethod(methodType);
-          });
-        });
-
-        // UPI app selection
-        upiApps.forEach((app) => {
-          app.addEventListener("click", function () {
-            upiApps.forEach((a) => a.classList.remove("selected"));
-            this.classList.add("selected");
-          });
-        });
-
-        // Wallet selection
-        walletOptions.forEach((wallet) => {
-          wallet.addEventListener("click", function () {
-            walletOptions.forEach((w) => w.classList.remove("selected"));
-            this.classList.add("selected");
-          });
-        });
-
-        // Bank selection
-        bankOptions.forEach((bank) => {
-          bank.addEventListener("click", function () {
-            bankOptions.forEach((b) => b.classList.remove("selected"));
-            this.classList.add("selected");
-          });
-        });
-
-        // Pay button click
-        payButton.addEventListener("click", function () {
-          const selectedMethod = document
-            .querySelector(".payment-method.selected")
-            .getAttribute("data-method");
-
-          // In a real application, you would process the payment here
-          alert(
-            `Payment of ₹720 initiated via ${getMethodName(
-              selectedMethod
-            )}. This is a demo - no actual payment will be processed.`
-          );
-
-          // Simulate payment processing
-          this.innerHTML =
-            '<i class="fas fa-spinner fa-spin me-2"></i>Processing...';
-          this.disabled = true;
-
-          setTimeout(() => {
-            alert("Payment successful! Thank you for your order.");
-            this.innerHTML =
-              '<i class="fas fa-check me-2"></i>Payment Successful';
-          }, 2000);
-        });
-
-        function selectPaymentMethod(methodType) {
-          // Remove selected class from all methods
-          paymentMethods.forEach((method) => {
-            method.classList.remove("selected");
-          });
-
-          // Hide all payment details
-          paymentDetails.forEach((detail) => {
-            detail.classList.remove("active");
-          });
-
-          // Add selected class to clicked method
-          document
-            .querySelector(`.payment-method[data-method="${methodType}"]`)
-            .classList.add("selected");
-
-          // Show corresponding payment details
-          document
-            .getElementById(`${methodType}-details`)
-            .classList.add("active");
-
-          // Update pay button text for COD
-          if (methodType === "cod") {
-            payButton.innerHTML =
-              '<i class="fas fa-shopping-bag me-2"></i>Confirm Order';
-          } else {
-            payButton.innerHTML =
-              '<i class="fas fa-lock me-2"></i>Pay Now ₹720';
-          }
-        }
-
-        function getMethodName(methodType) {
-          const methodNames = {
-            upi: "UPI",
-            card: "Credit/Debit Card",
-            netbanking: "Net Banking",
-            wallet: "Digital Wallet",
-            cod: "Cash on Delivery",
-          };
-
-          return methodNames[methodType] || "Unknown Method";
-        }
-      });
-    </script>
   </body>
 </html>
